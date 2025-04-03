@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Indi Makhana</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css" />
+
+    <style>
+      .hero {
+        padding: 60px 0;
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #1f1f1f;
+      }
+
+      /* About Section */
+      .about-section {
+        padding: 60px 0;
+      }
+
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+
+      .about-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-text {
+        flex: 2;
+        min-width: 300px;
+      }
+
+      .about-text h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color: #1f1f1f;
+      }
+
+      .about-text p {
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+
+      .about-text strong {
+        color: #4caf50;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+      }
+
+      .features-heading {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .features-heading h2 {
+        font-size: 32px;
+        color: #1f1f1f;
+      }
+
+      .features-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .feature-card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card h3 {
+        color: #4caf50;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      /* Partnership Section */
+      .partnership-section {
+        padding: 60px 0;
+      }
+
+      .partnership-heading {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .partnership-heading h2 {
+        font-size: 32px;
+        color: #1f1f1f;
+      }
+
+      .partnership-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .partnership-card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .partnership-card h3 {
+        color: #4caf50;
+        margin-bottom: 15px;
+        font-size: 20px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 80px 0;
+        text-align: center;
+        background-color: #4caf50;
+        color: #fff;
+      }
+
+      .cta-section h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #fff;
+        color: #4caf50;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #1f1f1f;
+        color: #fff;
+      }
+
+      .contact-section {
+        padding: 60px 20px;
+        background-color: #fff;
+        font-family: "Open Sans", Arial, sans-serif;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      /* Left Column - Info */
+      .contact-info {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .contact-info h1 {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        color: #1f1f1f;
+      }
+
+      .contact-info p {
+        margin-bottom: 30px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #333;
+      }
+
+      .contact-method {
+        margin-top: 40px;
+      }
+
+      .contact-method h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #1f1f1f;
+      }
+
+      .contact-method p {
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      /* Right Column - Form */
+      .contact-form {
+        flex: 1.5;
+        min-width: 300px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #1f1f1f;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #a57b64;
+      }
+
+      .form-group textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background-color: #a57b64;
+        color: white;
+        border: none;
+        padding: 14px 30px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .submit-btn:hover {
+        background-color: #8e6853;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .contact-container {
+          flex-direction: column;
+        }
+
+        .contact-info,
+        .contact-form {
+          min-width: 100%;
+        }
+
+        .contact-info h1 {
+          font-size: 36px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .contact-section {
+          padding: 40px 15px;
+        }
+
+        .contact-info h1 {
+          font-size: 32px;
+        }
+
+        .submit-btn {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      We are currently taking pre-orders only for the next season. Delivery will
+      be in Aug/Sep 2024
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Lotus Makhana Logo" id="logo-img" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-4">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Our Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+
+          <a href="#" class="cart-btn d-flex align-items-center">
+            <i class="bi bi-cart"></i>
+            <span class="ms-2">Cart</span>
+            <span class="cart-count">2</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Our Journey</h1>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-content">
+          <div class="about-image">
+            <img src="images/aboutus.png" alt="Lotus Makhana Farm" />
+          </div>
+          <div class="about-text">
+            <h2>The Makhana Masters at Lotus Makhana</h2>
+            <p>
+              At Lotus Makhana, we're not just passionate about superfoods,
+              we're obsessed with creating the perfect Makhana experience.
+              Founded by two MBA graduates, with a hunger for healthy living and
+              a keen eye for inefficiencies, Lotus Makhana was born from a
+              simple observation: Makhana industry is stuck in the past.
+            </p>
+
+            <p><strong>The Makhana Paradox: Unfulfilled Potential</strong></p>
+            <p>
+              We recognized the immense potential in this ancient superfood,
+              rich in nutrients and featuring a unique texture. However, the
+              market was fraught with inconsistency, unreliable supply,
+              fluctuating quality, and a lack of transparency. This wasn't
+              acceptable for Makhana enthusiasts or health-conscious consumers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="features-heading">
+          <h2>Revolutionising the Makhana Journey: From Farm to You</h2>
+          <p>
+            We realised a different approach was necessary. Instead of becoming
+            another cog in the existing system, we took a bold step and acquired
+            our very own farms in Madhubani, the heartland of Makhana
+            cultivation. This farm-to-table ownership allows us to:
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <h3>Cultivate Excellence</h3>
+            <p>
+              We handpick our seeds, meticulously nurture our crops using
+              sustainable practices, and ensure highest quality standards
+              throughout the harvest and processing.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Unlock Consistency</h3>
+            <p>
+              By controlling the entire supply chain, we guarantee a reliable
+              and consistent supply of premium Makhana to our partners.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <h3>Embrace Transparency</h3>
+            <p>
+              From seed selection to final packaging, we believe in open
+              communication. You'll always know exactly where your Makhana comes
+              from.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership-section">
+      <div class="container">
+        <div class="partnership-heading">
+          <h2>Beyond Quality: Building Strong Partnerships</h2>
+          <p>
+            At Lotus Makhana, we understand that our success hinges on your
+            success. That's why we're dedicated to becoming the most reliable
+            and trusted partner for distributors and wholesalers. We offer:
+          </p>
+        </div>
+
+        <div class="partnership-grid">
+          <div class="partnership-card">
+            <h3>Competitive Pricing</h3>
+            <p>
+              We believe in creating a win-win situation. Our efficient
+              farm-to-table model allows us to offer premium Makhana at
+              competitive prices.
+            </p>
+          </div>
+
+          <div class="partnership-card">
+            <h3>Unwavering Support</h3>
+            <p>
+              We're here for you every step of the way. Our dedicated team is
+              committed to providing exceptional customer service and ongoing
+              support.
+            </p>
+          </div>
+
+          <div class="partnership-card">
+            <h3>Shared Passion for Makhana</h3>
+            <p>
+              We're more than just a supplier; we're Makhana enthusiasts, just
+              like you. We share your passion for this incredible superfood and
+              are excited to work together to elevate the Makhana experience for
+              everyone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h1 class="section-title">Contact Us</h1>
+          <p>
+            Connect with Lotus Makhana to enjoy premium quality makhana sourced
+            directly from our farms in Madhubani. Support our local farmers and
+            help promote sustainable agricultural practices globally.
+          </p>
+
+          <div class="contact-method">
+            <h3>Email</h3>
+            <p>enquiries@lotusmakhana.com</p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <div class="form-group">
+            <label for="fullname">Enter your full name here</label>
+            <input type="text" id="fullname" placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Enter your email address*</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Your email address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Type your message here*</label>
+            <textarea
+              id="message"
+              placeholder="Your message"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit your message</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Connect with us</h2>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+          <a href="mailto:enquiries@Indimakhana.com" class="footer-email"
+            >enquiries@lotusmakhana.com</a
+          >
+        </div>
+
+        <div class="footer-right">
+          <h2>Subscribe to our newsletter</h2>
+          <p>Enter your email address to subscribe</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email address here"
+              required
+            />
+            <button type="submit">Subscribe now for updates</button>
+          </form>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Rund Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>Copyright © 2025 Indi Makhana. All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            navLinks.forEach((item) => item.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+
+        document.getElementById("logo-img").src = "images/logo.png";
+
+        function adjustBodyPadding() {
+          const announcementHeight =
+            document.querySelector(".announcement-bar").offsetHeight;
+          const navbarHeight = document.querySelector(".navbar").offsetHeight;
+          document.body.style.paddingTop =
+            announcementHeight + navbarHeight + "px";
+          document.querySelector(".navbar").style.top =
+            announcementHeight + "px";
+        }
+
+        adjustBodyPadding();
+        window.addEventListener("resize", adjustBodyPadding);
+      });
+
+      // Gallery Lightbox functionality
+      let currentImageIndex = 0;
+      const images = [
+        "images/g1.png",
+        "images/g2.png",
+        "images/g3.png",
+        "images/g4.png",
+        "images/g5.png",
+        "images/g6.png",
+        "images/g7.png",
+        "images/g8.png",
+      ];
+
+      function openLightbox(imageSrc) {
+        currentImageIndex = images.indexOf(imageSrc);
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      function changeImage(step) {
+        currentImageIndex += step;
+
+        if (currentImageIndex >= images.length) {
+          currentImageIndex = 0;
+        } else if (currentImageIndex < 0) {
+          currentImageIndex = images.length - 1;
+        }
+
+        document.getElementById("lightbox-img").src = images[currentImageIndex];
+      }
+
+      document
+        .getElementById("lightbox")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeLightbox();
+          }
+        });
+
+      document.addEventListener("keydown", function (e) {
+        if (document.getElementById("lightbox").classList.contains("active")) {
+          if (e.key === "Escape") {
+            closeLightbox();
+          } else if (e.key === "ArrowRight") {
+            changeImage(1);
+          } else if (e.key === "ArrowLeft") {
+            changeImage(-1);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

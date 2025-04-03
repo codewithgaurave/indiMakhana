@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Indi Makhana</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css" />
+
+    <style>
+      .blog-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      .blog-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      /* Blog grid container */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 2rem;
+      }
+
+      /* Blog card */
+      .blog-card {
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .blog-image {
+        height: 200px;
+        overflow: hidden;
+      }
+
+      .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .blog-card:hover .blog-image img {
+        transform: scale(1.05);
+      }
+
+      /* Blog content */
+      .blog-content {
+        padding: 1.5rem;
+      }
+
+      .blog-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+      }
+
+      .blog-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 1rem;
+      }
+
+      .blog-source {
+        font-weight: 500;
+      }
+
+      .blog-description {
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .blog-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .blog-section h2 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      We are currently taking pre-orders only for the next season. Delivery will
+      be in Aug/Sep 2024
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Lotus Makhana Logo" id="logo-img" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-4">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Our Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+
+          <a href="#" class="cart-btn d-flex align-items-center">
+            <i class="bi bi-cart"></i>
+            <span class="ms-2">Cart</span>
+            <span class="cart-count">2</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="blog-section">
+      <h2 class="section-title">Blog</h2>
+      <div class="blog-grid">
+        <!-- Blog Card 1 -->
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="images/blogsec1.png" alt="Makhana on a lotus leaf" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">
+              The Intricacies of Makhana Production and Market Dynamics in India
+            </h3>
+            <div class="blog-meta">
+              <span class="blog-date">7/6/2024</span>
+              <span class="blog-read-time">4 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Card 2 -->
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="images/blogsec2.png" alt="Bowl of Makhana" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">
+              Makhana 101: A Beginner's Guide to the Ancient Superfood
+            </h3>
+            <p class="blog-source">Lotus Makhana</p>
+            <div class="blog-meta">
+              <span class="blog-date">7/6/2024</span>
+              <span class="blog-read-time">2 min read</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Card 3 -->
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="images/blogsec3.png" alt="Pile of Makhana" />
+          </div>
+          <div class="blog-content">
+            <h3 class="blog-title">
+              Makhana Export from India: A Growing Global Market
+            </h3>
+            <p class="blog-description">Blog post description.</p>
+            <div class="blog-meta">
+              <span class="blog-date">7/6/2024</span>
+              <span class="blog-read-time">2 min read</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Connect with us</h2>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+          <a href="mailto:enquiries@Indimakhana.com" class="footer-email"
+            >enquiries@lotusmakhana.com</a
+          >
+        </div>
+
+        <div class="footer-right">
+          <h2>Subscribe to our newsletter</h2>
+          <p>Enter your email address to subscribe</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email address here"
+              required
+            />
+            <button type="submit">Subscribe now for updates</button>
+          </form>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Rund Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>Copyright © 2025 Indi Makhana. All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            navLinks.forEach((item) => item.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+
+        document.getElementById("logo-img").src = "images/logo.png";
+
+        function adjustBodyPadding() {
+          const announcementHeight =
+            document.querySelector(".announcement-bar").offsetHeight;
+          const navbarHeight = document.querySelector(".navbar").offsetHeight;
+          document.body.style.paddingTop =
+            announcementHeight + navbarHeight + "px";
+          document.querySelector(".navbar").style.top =
+            announcementHeight + "px";
+        }
+
+        adjustBodyPadding();
+        window.addEventListener("resize", adjustBodyPadding);
+      });
+
+      // Gallery Lightbox functionality
+      let currentImageIndex = 0;
+      const images = [
+        "images/g1.png",
+        "images/g2.png",
+        "images/g3.png",
+        "images/g4.png",
+        "images/g5.png",
+        "images/g6.png",
+        "images/g7.png",
+        "images/g8.png",
+      ];
+
+      function openLightbox(imageSrc) {
+        currentImageIndex = images.indexOf(imageSrc);
+        document.getElementById("lightbox-img").src = imageSrc;
+        document.getElementById("lightbox").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      function changeImage(step) {
+        currentImageIndex += step;
+
+        if (currentImageIndex >= images.length) {
+          currentImageIndex = 0;
+        } else if (currentImageIndex < 0) {
+          currentImageIndex = images.length - 1;
+        }
+
+        document.getElementById("lightbox-img").src = images[currentImageIndex];
+      }
+
+      document
+        .getElementById("lightbox")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeLightbox();
+          }
+        });
+
+      document.addEventListener("keydown", function (e) {
+        if (document.getElementById("lightbox").classList.contains("active")) {
+          if (e.key === "Escape") {
+            closeLightbox();
+          } else if (e.key === "ArrowRight") {
+            changeImage(1);
+          } else if (e.key === "ArrowLeft") {
+            changeImage(-1);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
