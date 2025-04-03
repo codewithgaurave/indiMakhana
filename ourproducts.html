@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Indi Makhana</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css" />
+
+    <style>
+      /* Base styles */
+      .product-listing-section {
+        font-family: "Arial", sans-serif;
+        color: #1a1a1a;
+        padding: 100px 16px;
+        background-color: #fff;
+      }
+
+      .container {
+        max-width: 1224px;
+        margin: 0 auto;
+      }
+
+      /* Browse by section */
+      .browse-by {
+        margin-bottom: 40px;
+      }
+
+      .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .category-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+
+      .category-item a {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-size: 16px;
+        padding: 8px 0;
+        position: relative;
+      }
+
+      .category-item.active a {
+        font-weight: bold;
+      }
+
+      .category-item.active a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #1a1a1a;
+      }
+
+      /* Products header */
+      .products-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .products-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .products-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .product-count {
+        font-size: 14px;
+      }
+
+      .sorting-options {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sort-select {
+        border: none;
+        background: transparent;
+        font-size: 14px;
+        color: #1a1a1a;
+        cursor: pointer;
+        appearance: none;
+        padding-right: 15px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right center;
+      }
+
+      /* Product grid */
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .product-card {
+        border-radius: 0px;
+        border: 1px solid #e0e0e0;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover .product-image img {
+        transform: scale(1.05);
+      }
+
+      .product-details {
+        padding: 16px;
+      }
+
+      .product-title {
+        font-size: 16px;
+        margin: 0 0 8px 0;
+        font-weight: normal;
+      }
+
+      .product-price {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .current-price {
+        font-weight: bold;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+      }
+
+      .add-to-bag {
+        width: 100%;
+        padding: 12px;
+        background-color: transparent;
+        border: 1px solid #000;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .add-to-bag:hover {
+        background-color: #000;
+        color: #fff;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .product-listing-section {
+          padding: 56px 16px;
+        }
+
+        .products-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+        }
+
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      We are currently taking pre-orders only for the next season. Delivery will
+      be in Aug/Sep 2024
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="Lotus Makhana Logo" id="logo-img" />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-4">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="aboutus.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ourproducts.html">Our Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+          </ul>
+
+          <a href="cart.html" class="cart-btn d-flex align-items-center">
+            <i class="bi bi-cart"></i>
+            <span class="ms-2">Cart</span>
+            <span class="cart-count">2</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="product-listing-section">
+      <div class="container">
+        <!-- Browse by section -->
+        <div class="browse-by">
+          <h2 class="section-title">Browse by</h2>
+          <ul class="category-list">
+            <li class="category-item active"><a href="#">All products</a></li>
+            <!-- Add more categories as needed -->
+          </ul>
+        </div>
+
+        <!-- All products section -->
+        <div class="all-products">
+          <div class="products-header">
+            <h3 class="products-title">All products</h3>
+            <div class="products-meta">
+              <span class="product-count">3 products</span>
+              <div class="sorting-options">
+                <label for="sort-select">Sort by:</label>
+                <select id="sort-select" class="sort-select">
+                  <option value="default">Default</option>
+                  <option value="price-low">Price (low to high)</option>
+                  <option value="price-high">Price (high to low)</option>
+                  <option value="newest">Most recent</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product grid -->
+          <div class="product-grid">
+            <!-- Product card 1 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=886,h=886,fit=crop,q=100/cdn-ecommerce/store_01J1WHYGF6XA0Y40W9V8VYXAVK%2Fassets%2F1720019152606-Gemini_Generated_Image_q4i6uuq4i6uuq4i6.jpg"
+                  alt="4 Suta Makhana"
+                />
+              </div>
+              <div class="product-details">
+                <h4 class="product-title">4 Suta Makhana</h4>
+                <div class="product-price">
+                  <span class="current-price">₹5500.00</span>
+                  <span class="original-price">₹5000.00</span>
+                </div>
+              </div>
+              <button class="add-to-bag">Add to bag</button>
+            </div>
+
+            <!-- Product card 2 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=886,h=886,fit=crop,q=100/cdn-ecommerce/store_01J1WHYGF6XA0Y40W9V8VYXAVK%2Fassets%2F1720071576673-Gemini_Generated_Image_wmn0dswmn0dswmn0.jpg"
+                  alt="5 Suta Makhana"
+                />
+              </div>
+              <div class="product-details">
+                <h4 class="product-title">5 Suta Makhana (MOQ: 10Kg)</h4>
+                <div class="product-price">
+                  <span class="current-price">₹8500.00</span>
+                  <span class="original-price">₹7000.00</span>
+                </div>
+              </div>
+              <button class="add-to-bag">Add to bag</button>
+            </div>
+
+            <!-- Product card 3 -->
+            <div class="product-card">
+              <div class="product-image">
+                <img
+                  src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=886,h=886,fit=crop,q=100/cdn-ecommerce/store_01J1WHYGF6XA0Y40W9V8VYXAVK%2Fassets%2F1720071945003-Gemini_Generated_Image_x4i4sgx4i4sgx4i4.jpg"
+                  alt="6 Suta Makhana"
+                />
+              </div>
+              <div class="product-details">
+                <h4 class="product-title">6 Suta Makhana</h4>
+                <div class="product-price">
+                  <span class="current-price">₹15000.00</span>
+                  <span class="original-price">₹10000.00</span>
+                </div>
+              </div>
+              <button class="add-to-bag">Add to bag</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+      <div class="footer-container">
+        <div class="footer-left">
+          <h2>Connect with us</h2>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+          <a href="mailto:enquiries@Indimakhana.com" class="footer-email"
+            >enquiries@lotusmakhana.com</a
+          >
+        </div>
+
+        <div class="footer-right">
+          <h2>Subscribe to our newsletter</h2>
+          <p>Enter your email address to subscribe</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Your email address here"
+              required
+            />
+            <button type="submit">Subscribe now for updates</button>
+          </form>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Rund Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <p>Copyright © 2025 Indi Makhana. All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
