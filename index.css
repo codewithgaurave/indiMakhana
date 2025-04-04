@@ -35,7 +35,7 @@ body {
 }
 
 .navbar-brand img {
-  height: 50px;
+  height: 100px;
 }
 
 .navbar-nav .nav-link {
@@ -512,7 +512,7 @@ body {
   }
 
   .navbar-brand img {
-    height: 40px;
+    height: 80px;
   }
 
   .hero-section {
@@ -1241,6 +1241,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
+  height: fit-content;
 }
 
 .video-embed {
