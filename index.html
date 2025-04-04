@@ -125,63 +125,19 @@
         </div>
         <div class="video-container">
           <div class="video-embed">
-            <iframe
-              class="grid-embed__iframe"
-              srcdoc="<!DOCTYPE html>
-                        <head>
-                            <style>
-                                html {
-                                    overflow: hidden;
-                                }
-                                * {
-                                    margin: 0;
-                                    padding: 0;
-                                    box-sizing: border-box;
-                                }
-                                iframe {
-                                    max-width: 100%;
-                                    height: 300px;
-                                }
-                                .video-grid {
-                                    display: grid;
-                                    grid-template-columns: repeat(3, 1fr);
-                                    height: 100%;
-                                    width: 100%;
-                                }
-                                .video-item {
-                                    position: relative;
-                                    
-                                    height: 300px;
-                                    overflow: hidden;
-                                }
-                                .video-item iframe {
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    height: 100%;
-                                    border: none;
-                                }
-                            </style>
-                        </head>
-                        <body>
-                            <div class='video-grid'>
-                                <div class='video-item'>
-                                    <iframe src='https://drive.google.com/file/d/1L6ai8ob6Btlo_3FbFKHCP3OT6GVrOxRg/preview' width='100%' height='100%' allow='autoplay'></iframe>
-                                </div>
-                                <div class='video-item'>
-                                    <iframe src='https://drive.google.com/file/d/1L6ai8ob6Btlo_3FbFKHCP3OT6GVrOxRg/preview' width='100%' height='100%' allow='autoplay'></iframe>
-                                </div>
-                                <div class='video-item'>
-                                    <iframe src='https://drive.google.com/file/d/1L6ai8ob6Btlo_3FbFKHCP3OT6GVrOxRg/preview' width='100%' height='100%' allow='autoplay'></iframe>
-                                </div>
-                            </div>
-                        </body>
-                    </html>"
-              title="Makhana Farming Videos"
-            ></iframe>
+              <div class="video-grid">
+                  <div class="video-item">
+                      <iframe src="https://drive.google.com/file/d/1L6ai8ob6Btlo_3FbFKHCP3OT6GVrOxRg/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                  </div>
+                  <div class="video-item">
+                      <iframe src="https://drive.google.com/file/d/1L6ai8ob6Btlo_3FbFKHCP3OT6GVrOxRg/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                  </div>
+                  <div class="video-item">
+                      <iframe src="https://drive.google.com/file/d/1L6ai8ob6Btlo_3FbFKHCP3OT6GVrOxRg/preview" width="100%" height="100%" allow="autoplay"></iframe>
+                  </div>
+              </div>
           </div>
-        </div>
+      </div>
       </div>
     </section>
 
@@ -236,8 +192,8 @@
                                           height: 300px;
                                       }
                                       .video-grid {
-                                          display: grid;
-                                          grid-template-columns: repeat(1, 1fr);
+                                          display: flex;
+                                          flex-direction
                                           height: 100%;
                                           width: 100%;
                                       }
@@ -255,6 +211,8 @@
                                           height: 100%;
                                           border: none;
                                       }
+
+                                
                                   </style>
                               </head>
                               <body> <code><iframe src="https://drive.google.com/file/d/1l24D5Du_Vi-0MCd1A-q58rJIUCzcdW6b/preview" width="640" height="480" allow="autoplay"></iframe></code></body>
